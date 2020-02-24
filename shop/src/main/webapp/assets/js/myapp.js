@@ -8,9 +8,9 @@ $(function(){
 	case 'Contact Us':
 		$('#contact').addClass('active');
 		break;
-	case 'Services':
-		$('#services').addClass('active');
-		break; 
+	case 'Buy Products':
+		$('#byProducts').addClass('active');
+		break;
 	default :
 		$('#home').addClass('active');
 		break;
