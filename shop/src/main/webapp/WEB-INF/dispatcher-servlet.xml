@@ -11,8 +11,8 @@
    
    ">
 
-	<context:component-scan base-package="net.force.shop.controller" />
-	<context:component-scan base-package="net.force.shopbackend.daoImpl" />
+	<context:component-scan base-package="net.force.shop" />
+	<context:component-scan base-package="net.force.shopbackend" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

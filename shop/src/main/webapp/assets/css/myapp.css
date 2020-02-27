@@ -38,3 +38,13 @@ footer {
 .text {
 	margin: 15px;
 }
+
+.dataTableImg {
+	width:100px;
+	height:100px;
+}
+
+img {
+	max-width:100%;
+	max-height:300px;
+}

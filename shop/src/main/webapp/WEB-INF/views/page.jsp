@@ -24,15 +24,23 @@
 
 <script>
 	window.menu = '${title}';
-</script>
-<!-- Theme -->
-<link href="${css}/theme1.css" rel="stylesheet">
 
+	window.contextRoot = '${contextRoot}'
+</script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
+<!-- Bootstrap Glyphicons css -->
+<link href="${css}/bootstrap-glyphicons.css" rel="stylesheet">
+
+<!-- Theme -->
+<link href="${css}/theme2.css" rel="stylesheet">
+
+<!-- Bootstrap DataTable CSS -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+
+<!-- Custom styles  -->
 <link href="${css}/myapp.css" rel="stylesheet">
 
 </head>
@@ -63,6 +71,10 @@
 				<%@include file="buyProducts.jsp"%>
 			</c:if>
 
+			<c:if test="${userClickViewProduct == true }">
+				<%@include file="viewProduct.jsp"%>
+			</c:if>
+
 		</div>
 		<!-- Content div close -->
 
@@ -71,9 +83,21 @@
 
 	</div>
 
-	<!-- Bootstrap core JavaScript -->
+	<!-- JQuery -->
+
 	<script src="${js}/jquery.js"></script>
-	<script src="${js}/bootstrap.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+
+	<script src="${js}/bootstrap.min.js"></script>
+
+	<!-- DataTables Plugin -->
+
+	<script src="${js}/jquery.dataTables.js"></script>
+
+	<script src="${js}/dataTables.bootstrap4.js"></script>
+
+	<!-- Own javascript -->
 	<script src="${js}/myapp.js"></script>
 
 </body>
