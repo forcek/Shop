@@ -30,6 +30,8 @@
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+<link href="${css}/bootstrap.css" rel="stylesheet">
+
 
 <!-- Bootstrap Glyphicons css -->
 <link href="${css}/bootstrap-glyphicons.css" rel="stylesheet">
@@ -73,6 +75,10 @@
 
 			<c:if test="${userClickViewProduct == true }">
 				<%@include file="viewProduct.jsp"%>
+			</c:if>
+			
+			<c:if test="${userClickManageProducts == true }">
+				<%@include file="manageProducts.jsp"%>
 			</c:if>
 
 		</div>
