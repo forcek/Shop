@@ -25,7 +25,7 @@ public class Product {
 	@Column(name = "image_URL")
 	private String imageURL;
 	
-	private double price;
+	private int price;
 	
 	private int quantity;
 	
@@ -63,7 +63,7 @@ public class Product {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	public double getPrice() {
+	public int getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {

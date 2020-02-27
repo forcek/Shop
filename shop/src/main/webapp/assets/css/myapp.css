@@ -20,6 +20,7 @@ body {
 
 footer {
 	margin: 0;
+	padding-top: 20px;
 }
 
 
@@ -31,7 +32,7 @@ footer {
 	
 	position:absolute;
 	bottom: 0;
-	height: 60px;
+	height: 55px;
 
 }
 
@@ -53,8 +54,10 @@ img {
 	color: #ff000;
 }
 
-
-
+card {
+	
+	padding-bottom: 80px;	
+}
 
 
 
