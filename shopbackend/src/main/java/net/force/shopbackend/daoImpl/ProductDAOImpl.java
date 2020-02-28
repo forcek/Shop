@@ -26,9 +26,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 		String selectActiveProduct = "FROM Product WHERE active = :active";
 
-		Query query = sessionFactory
-						.getCurrentSession()
-							.createQuery(selectActiveProduct);
+		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveProduct);
 
 		query.setParameter("active", true);
 
@@ -37,9 +35,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public Product get(int id) {
-		return sessionFactory
-					.getCurrentSession()
-						.get(Product.class, Integer.valueOf(id));
+		return sessionFactory.getCurrentSession().get(Product.class, Integer.valueOf(id));
 	}
 
 	// Method to add product
@@ -64,9 +60,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 		try {
 
-			sessionFactory
-				.getCurrentSession()
-					.update(product);
+			sessionFactory.getCurrentSession().update(product);
 
 			return true;
 		} catch (Exception e) {
@@ -83,9 +77,7 @@ public class ProductDAOImpl implements ProductDAO {
 		product.setActive(false);
 		try {
 
-			sessionFactory
-				.getCurrentSession()
-					.update(product);
+			sessionFactory.getCurrentSession().update(product);
 
 			return true;
 		} catch (Exception e) {
@@ -100,11 +92,8 @@ public class ProductDAOImpl implements ProductDAO {
 
 		String selectActiveProducts = "FROM Product WHERE active = :active";
 
-		return sessionFactory
-				.getCurrentSession()
-					.createQuery(selectActiveProducts, Product.class)
-						.setParameter("active", true)
-							.getResultList();
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProducts, Product.class)
+				.setParameter("active", true).getResultList();
 	}
 
 }

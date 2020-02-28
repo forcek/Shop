@@ -1,4 +1,4 @@
-package net.force.shopbackend;
+/*package net.force.shopbackend;
 
 import static org.junit.Assert.assertEquals;
 
@@ -75,7 +75,7 @@ public class ProductTestCase {
 	//
 	// }
 
-	/*
+	
 	 * @Test public void testListProduct(){
 	 * 
 	 * product = productDAO.get(2);
@@ -85,9 +85,9 @@ public class ProductTestCase {
 	 * 
 	 * }
 	 * 
-	 */
+	 
 
-	/*
+	
 	 * @Test public void testCRUDProduct(){
 	 * 
 	 * 
@@ -147,16 +147,17 @@ public class ProductTestCase {
 	 * 
 	 * }
 	 * 
-	 */
+	 
 
 	@Test
 	public void testListActiveProducts() {
 
-	/*	assertEquals("Successfully fetched list of active products from the table.", 2,
-				productDAO.listActiveProducts().size());*/
+		assertEquals("Successfully fetched list of active products from the table.", 2,
+				productDAO.listActiveProducts().size());
 		
 		product = productDAO.get(11);
 		assertEquals("Successfully deleted a product from the table",true,productDAO.delete(product));
 	}
 
 }
+*/
