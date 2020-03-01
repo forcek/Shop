@@ -3,14 +3,26 @@
 
 <div class="container">
 
-	<div class="row">
+	<div class="row ">
 
 		<c:if test="${not empty message}">
 
-			<div class="alert alert-success alert-dismissible">
+			<div class="alert alert-success alert-dismissible offset-md-4">
 
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 				${message}
+
+			</div>
+
+
+		</c:if>
+		
+		<c:if test="${not empty message1}">
+
+			<div class="alert alert-danger alert-dismissible offset-md-4">
+
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				${message1}
 
 			</div>
 
@@ -21,7 +33,7 @@
 
 		<div class="offset-md-2 col-md-8">
 
-			<div class="card card-success card-bd-success">
+			<div class="card card-success">
 
 				<div class="card-header">
 
@@ -31,13 +43,18 @@
 
 				<div class="card-body">
 
+					<!-- FORM -->
+
 					<sf:form class="form-horizontal" modelAttribute="product"
-						action="${contextRoot}/manage/products" method="POST">
+						action="${contextRoot}/manage/products" method="POST"
+						enctype="multipart/form-data">
+
+
 
 						<div class="form-group row">
 
 							<label class="control-label col-md-4" for="name">Enter
-								Product Name:</label>
+								Product Name</label>
 
 							<div class="col-md-8">
 
@@ -51,7 +68,7 @@
 						<div class="form-group row">
 
 							<label class="control-label col-md-4" for="description">Enter
-								Product Description:</label>
+								Product Description</label>
 
 							<div class="col-md-8">
 
@@ -66,7 +83,7 @@
 						<div class="form-group row">
 
 							<label class="control-label col-md-4" for="price">Enter
-								Product Price:</label>
+								Product Price</label>
 
 							<div class="col-md-8">
 
@@ -80,7 +97,7 @@
 						<div class="form-group row">
 
 							<label class="control-label col-md-4" for="quantity">Enter
-								Product Quantity:</label>
+								Product Quantity</label>
 
 							<div class="col-md-8">
 
@@ -90,6 +107,22 @@
 							</div>
 
 						</div>
+
+						<!-- For Image -->
+
+						<div class="form-group row">
+
+							<label class="control-label col-md-4" for="file">Select
+								an Image</label>
+
+							<div class="col-md-8">
+
+								<sf:input type="file" path="file" id="file" class="form-control" />
+								<sf:errors path="file" style="color:red" element="em" />
+							</div>
+
+						</div>
+
 
 						<div class="form-group row">
 
@@ -120,5 +153,57 @@
 
 	</div>
 
+
+
+	<hr />
+	<h1>Available Products</h1>
+	<hr />
+
+	<div class="row">
+
+
+		<div class='col-xs-12 col-md-12'>
+			<div style="overflow:auto">
+
+				<table id="adminProductsTable"
+					class="table table-condensed table-bordered">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>&#160;</th>
+							<th>Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Active</th>
+							<th>Edit</th>
+
+						</tr>
+					</thead>
+
+
+					<tfoot>
+
+						<tr>
+
+							<th>Id</th>
+							<th>&#160;</th>
+							<th>Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Active</th>
+							<th>Edit</th>
+
+						</tr>
+					</tfoot>
+
+
+				</table>
+			</div>
+
+		</div>
+
+
+	</div>
 
 </div>

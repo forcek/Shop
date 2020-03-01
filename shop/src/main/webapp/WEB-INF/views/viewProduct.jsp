@@ -6,7 +6,7 @@
 
 			<div class="thumbnail">
 
-				<img src="${images}/${product.name}.jpg" class="img img-responsive" />
+				<img src="${images}/${product.code}.jpg" class="img img-responsive" />
 
 			</div>
 

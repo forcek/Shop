@@ -7,8 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -29,9 +32,7 @@ public class Product {
 	@NotBlank(message = "Please enter the Description for the product!")
 	private String description;
 	
-	@Column(name = "image_URL")
-	private String imageURL;
-	
+
 	@Min(value=1, message="Price should be more than 1!")
 	private int price;
 	
@@ -73,12 +74,7 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getImageURL() {
-		return imageURL;
-	}
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
-	}
+	
 	public boolean isActive() {
 		return active;
 	}
@@ -101,10 +97,24 @@ public class Product {
 	
 	
 	
+	@Transient
+	private MultipartFile file;
+	
+		
+	public MultipartFile getFile() {
+		return file;
+	}
+
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", code=" + code + ", description=" + description
-				+ ", imageURL=" + imageURL + ", price=" + price + ", quantity=" + quantity + ", active=" + active + "]";
+				+ ", price=" + price + ", quantity=" + quantity + ", active=" + active + "]";
 	}
 	
 	

@@ -10,8 +10,8 @@
 	<div class="row">
 
 		<div class="display col-md-12">
-
-			<table id="productListTable"
+<div style="overflow:auto">
+		<table id="productListTable"
 				class="table table-striped table-borderd">
 
 				<thead>
@@ -41,7 +41,8 @@
 				</tfoot>
 
 			</table>
-
+</div>
+	
 		</div>
 
 	</div>

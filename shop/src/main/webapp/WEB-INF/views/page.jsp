@@ -76,7 +76,7 @@
 			<c:if test="${userClickViewProduct == true }">
 				<%@include file="viewProduct.jsp"%>
 			</c:if>
-			
+
 			<c:if test="${userClickManageProducts == true }">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
@@ -102,6 +102,10 @@
 	<script src="${js}/jquery.dataTables.js"></script>
 
 	<script src="${js}/dataTables.bootstrap4.js"></script>
+
+	<!-- Bootbox Plugin  -->
+	<script src="${js}/bootbox.min.js"></script>
+
 
 	<!-- Own javascript -->
 	<script src="${js}/myapp.js"></script>

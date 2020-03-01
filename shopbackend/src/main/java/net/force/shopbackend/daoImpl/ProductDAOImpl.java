@@ -24,15 +24,19 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public List<Product> list() {
 
-		String selectActiveProduct = "FROM Product WHERE active = :active";
-
-		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveProduct);
-
-		query.setParameter("active", true);
-
-		return query.getResultList();
+		return sessionFactory.getCurrentSession().createQuery("FROM Product", Product.class).getResultList();
 	}
 
+	@Override
+	public List<Product> listActiveProducts() 	{
+
+		String selectActiveProducts = "FROM Product WHERE active = :active";
+
+		return sessionFactory.getCurrentSession().createQuery(selectActiveProducts, Product.class)
+				.setParameter("active", true).getResultList();
+	}
+	
+	
 	@Override
 	public Product get(int id) {
 		return sessionFactory.getCurrentSession().get(Product.class, Integer.valueOf(id));
@@ -87,13 +91,6 @@ public class ProductDAOImpl implements ProductDAO {
 
 	}
 
-	@Override
-	public List<Product> listActiveProducts() {
-
-		String selectActiveProducts = "FROM Product WHERE active = :active";
-
-		return sessionFactory.getCurrentSession().createQuery(selectActiveProducts, Product.class)
-				.setParameter("active", true).getResultList();
-	}
+	
 
 }
